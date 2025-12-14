@@ -56,6 +56,7 @@ gacp() {
     echo "  - System files (.DS_Store, thumbs.db)"
     echo "  - Python cache (__pycache__, *.pyc)"
     echo "  - Environment files (.env.local, .env.*.local)"
+    echo "  - Image files (*.svg)"
     echo ""
     echo "EXIT CODES:"
     echo "  0    Success"
@@ -128,6 +129,7 @@ gacp() {
       ':(exclude)thumbs.db' \
       ':(exclude).env.local' \
       ':(exclude).env.*.local' \
+      ':(exclude)*.svg' \
       | head -n 200)
 
     if [ -z "$diff_output" ]; then
